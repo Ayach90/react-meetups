@@ -1,5 +1,5 @@
 import AllMeetupsPage from "./pages/AllMeetupsPage";
-import FavoritesPage from "./pages/Favorites";
+import FavoritesPage from "./pages/FavoritesPage";
 import NewMeetupForm from "./components/meetups/NewMeetupForm";
 import MainNavigation from "./components/layout/MainNavigation";
 import Layout from "./components/layout/Layout";

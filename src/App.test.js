@@ -11,12 +11,11 @@ import Layout from "./components/layout/Layout";
  * @returns {ShallowWrapper}
  */
 const setup = () => shallow(<App />);
-const findByTestAttr = (wrapper, val) => wrapper.find(`[data-test]='${val}'`);
 
 test("renders App without crashing", () => {
   const wrapper = setup();
-  //console.log(wrapper.debug());
   expect(wrapper.exists()).toBe(true);
+  expect(wrapper.find("div").props()["data-test"]).toBe("app");
 });
 
 test("renders the navigation component", () => {

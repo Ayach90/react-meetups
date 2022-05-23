@@ -22,7 +22,6 @@ export default function MainNavigation() {
           <li>
             <Link to="/">All Meetups</Link>
           </li>
-
           <li>
             <Link to="/new">Add New Meetup</Link>
           </li>
