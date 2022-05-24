@@ -6,10 +6,10 @@ Project to manage meetups. You can view all meetups, select some meetups as favo
 
 ## Dependencies / Libraries
 
-Forms: react-hook-form
-Styles: styled-components
-Navigation: react-router-dom@6
-Head: react-helmet
+- Forms: react-hook-form
+- Styles: styled-components
+- Navigation: react-router-dom@6
+- Head: react-helmet
 
 ## Testing
 
@@ -18,10 +18,10 @@ Some basic unit tests in order to have basic tests for each component.
 
 ## Run project
 
-1.- Clone project
-2.- npm i
-3.- npm start
-4.- http://localhost:3000
+- 1.- Clone project
+- 2.- npm i
+- 3.- npm start
+- 4.- http://localhost:3000
 
 ## TODO
 
