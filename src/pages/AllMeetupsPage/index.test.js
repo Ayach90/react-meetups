@@ -1,12 +1,12 @@
 import { shallow } from "enzyme";
-import MeetupItem from "../components/meetups/MeetupItem";
-import { FavoritesProvider } from "../contexts/FavoritesContext";
-import FavoritesPage from "./FavoritesPage";
+import MeetupItem from "../../components/meetups/MeetupItem";
+import { FavoritesProvider } from "../../contexts/FavoritesContext";
+import AllMeetupsPage from ".";
 
 test("Favorites without crashing", () => {
   const wrapper = shallow(
     <FavoritesProvider>
-      <FavoritesPage />
+      <AllMeetupsPage />
     </FavoritesProvider>
   );
   wrapper.find(<MeetupItem />).forEach((node) => {

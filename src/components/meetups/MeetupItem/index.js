@@ -1,40 +1,41 @@
-import classes from "./MeetupItem.module.css";
-import Card from "../ui/Card";
+import Card from "../../ui/Card";
 import { useContext } from "react";
-import { FavoritesContext } from "../../contexts/FavoritesContext";
+import { FavoritesContext } from "../../../contexts/FavoritesContext";
+import { Actions, Button, Content, Image, Item } from "./styles";
 
 export default function MeetupItem({ item }) {
   const { favorites, setFavorites } = useContext(FavoritesContext);
 
   return (
-    <li className={classes.item} data-test="meet-up-item">
+    <Item data-test="meet-up-item">
       <Card>
-        <div className={classes.image}>
+        <Image>
           <img src={item.image} alt={item.title} />
-        </div>
-        <div className={classes.content}>
+        </Image>
+        <Content>
           <h3>{item.title}</h3>
           <address>{item.address}</address>
           <p>{item.description}</p>
-        </div>
+        </Content>
         {favorites.findIndex((fav) => fav.id === item.id) === -1 ? (
-          <div className={classes.actions}>
-            <button onClick={() => setFavorites([...favorites, item])}>
+          <Actions>
+            <Button onClick={() => setFavorites([...favorites, item])}>
               Add to favorites
-            </button>
-          </div>
+            </Button>
+          </Actions>
         ) : (
-          <div className={`${classes.actions} ${classes.remove}`}>
-            <button
+          <Actions>
+            <Button
+              className="remove"
               onClick={() =>
                 setFavorites(favorites.filter((fav) => fav.id !== item.id))
               }
             >
               Remove of favorites
-            </button>
-          </div>
+            </Button>
+          </Actions>
         )}
       </Card>
-    </li>
+    </Item>
   );
 }

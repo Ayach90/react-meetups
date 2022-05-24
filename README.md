@@ -1,70 +1,61 @@
-# Getting Started with Create React App
+# React Meetups
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Project
 
-## Available Scripts
+Project to manage meetups. You can view all meetups, select some meetups as favorites and view a list of favorites meetups and add new meetups.
 
-In the project directory, you can run:
+## Dependencies / Libraries
 
-### `npm start`
+Forms: react-hook-form
+Styles: styled-components
+Navigation: react-router-dom@6
+Head: react-helmet
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Testing
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Jest + Enzyme
+Some basic unit tests in order to have basic tests for each component.
 
-### `npm test`
+## Run project
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1.- Clone project
+2.- npm i
+3.- npm start
+4.- http://localhost:3000
 
-### `npm run build`
+## TODO
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+When we have the backend, we will have to create the endpoint to add new Meetup.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Exercises
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1.- Para el header se requiere una animación para tener un acceso rápido a las distintas páginas cuando hacemos scroll. Se quiere que cuando hacemos scroll down, este tiene que desaparecer y cuando hacemos scroll up tiene que volver a aparecer en la posición de la página dónde te encuentres.
 
-### `npm run eject`
+R: I've solved it with useScrollDirection hook.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2.- Desde el header se puede navegar a las distintas páginas, pero por temas de SEO se requiere que esta navegación se vea reflejada en la url. (Ejemplo: la página de favoritos podría ser /favorites)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+R: I've used react-router-dom@6 in order to create a route per page.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3.- El botón de añadir a favoritos no está funcionando. Implementa la lógica para añadir y quitar de favoritos.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+R: I've created a context in order to have the favorite items in all components. We need this information in MainNavigation (Badge number), in FavoritesPage and in AllMeetupsPage. In AllMeetupsPage, we change the button depending of each item depending on if this item is favorite or not.
 
-## Learn More
+4.- Implementación de algún test. Puede ser e2e, unitario o funcional. En el proyecto encontrarás algunos test
+que el programador que inició el proyecto, empezó a hacer.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+R: I've created some basic test with jest + enzyme in order to have a basic test in each component.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Bonus:
 
-### Code Splitting
+-Styled Components: I have moved all styles to styled components. With it we can write styles in a nested way and we can re-use this styles in other components.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+-Form: I have converted the simple form of add new meetup with react-hook-form library.
 
-### Analyzing the Bundle Size
+-Architecture of files: I've created a folder for each component that it have more one file.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+-404: I've created a 404 page
 
-### Making a Progressive Web App
+-Head: I've added head information (title, description) for each page and a new Favicon.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+-Loader: I've put a loader animation while the list of all meetups is loading.

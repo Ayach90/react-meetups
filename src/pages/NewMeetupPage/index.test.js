@@ -1,6 +1,6 @@
 import { shallow } from "enzyme";
-import NewMeetupForm from "../components/meetups/NewMeetupForm";
-import NewMeetupsPage from "./NewMeetup";
+import NewMeetupForm from "../../components/meetups/NewMeetupForm";
+import NewMeetupsPage from "./";
 
 test("<NewMeetup/> renders without crashing", () => {
   const wrapper = shallow(<NewMeetupsPage />);
